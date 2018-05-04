@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动报名</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/public_documents/app.css">
+    <link rel="stylesheet" href="../css/signUp.css">
+    <script src="../js/public_documents/app.js"></script>
+    <script src="../js/public_documents/jquery.min.js"></script>
+    <script src="../js/public_documents/index.js"></script>
+
+    <script src="../js/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="../js/time_control/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="../css/time_control/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="../css/time_control/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="../js/time_control/mobiscroll.js" type="text/javascript"></script>
+    <script src="../js/time_control/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="../js/time_control/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="../css/time_control/mobiscroll_003.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="bg_top">
+    <img src="../img/registration_page/bg_top.png" alt="">
+</div>
+<form action="/activity/one/addMember">
+    <ul class="ul_box">
+        <li class="list">
+            <img src="../img/registration_page/tomatoes_sticks.png" alt="" class="tomatoes_sticks">
+            <img src="../img/registration_page/Opera_flag.png" alt="" class="Opera_flag">
+            <div class="title_box">
+                <img src="../img/registration_page/title.png" alt="" class="title">
+            </div>
+            <!--<p style="color: #999; font-size: 0.12rem;text-align: center;width: 100%;line-height: 0.35rem;margin-bottom: 0.2rem"> 以下信息均为必填项，请认真填写 *</p>-->
+            <input type="text" class="inp name" id="name" placeholder="姓名(必填)" maxlength="20" value="">
+            <div class="sex_box gender">
+                <span class="male" style="margin-right: 0.86rem;margin-left: 0.05rem">
+                    <input type="radio" name="sex" id="male" checked value="男">
+                    <label for="male">
+                      <img src="../img/registration_page/boy.png" alt=""
+                           style="width: auto; height: 0.35rem; vertical-align: middle;">
+                    </label>
+                </span>
+                <span class="female">
+                    <input type="radio" name="sex" id="female" value="女">
+                    <label for="female">
+                      <img src="../img/registration_page/girl.png" alt=""
+                           style="width: auto;height: 0.35rem;vertical-align: middle;">
+                    </label>
+                </span>
+            </div>
+            <input type="text" class="cardNo" placeholder="证件号码：" maxlength="100" value="">
+            <div class="birth">
+                <input value="" class="birthday" readonly="readonly" name="appDate" id="appDate" type="text"
+                       placeholder="出生日期：">
+                <img src="../img/registration_page/triangle_down.png" alt="" class="birth_img">
+            </div>
+            <input type="text" class="origin" placeholder="籍贯：如“北京市”" maxlength="10" value="">
+            <input type="text" class="nationality" placeholder="国籍" maxlength="15" value="">
+            <input type="text" class="ethnicity" placeholder="民族" maxlength="15" value="">
+        </li>
+        <li class="list">
+            <img src="../img/registration_page/Doorknob.png" alt="" class="Doorknob">
+            <div class="haw">
+                <input type="text" class="height" placeholder="身高(cm):" maxlength="3"
+                       onkeyup="value=value.replace(/[^\d]/g,'')" value="">
+                <input type="text" class="weight" placeholder="体重(kg):" maxlength="3"
+                       onkeyup="value=value.replace(/[^\d]/g,'')" value="">
+            </div>
+            <input type="text" class="education" placeholder="毕业/就读院校" value="">
+            <input type="text" class="wx" placeholder="微信：" maxlength="100" value="">
+            <input type="text" class="mobile" placeholder="电话：" maxlength="11" value="">
+            <input type="text" class="company" placeholder="所属公司（选填）：" maxlength="100" value="">
+            <input type="text" class="skill" placeholder="才艺：最多3项，以逗号分隔" maxlength="100" value="">
+            <textarea class="summary" name="" id="" placeholder="自我介绍：" maxlength="500"></textarea>
+        </li>
+        <li class="list">
+            <img src="../img/registration_page/tricycle.png" alt="" class="tricycle">
+            <div class="title_box1">
+                <img src="../img/registration_page/photo_title.png" alt="" class="title">
+            </div>
+            <!--<p style="color: #999; font-size: 0.12rem;text-align: center;width: 100%;line-height: 0.35rem;margin-bottom: 0.2rem"> 请按要求上传四张本人照片 *</p>-->
+            <div class="ol_box">
+                <div>
+                    <div id="selectfiles1" class='photo photos' style="margin-right: 0.15rem;">
+                        <!--<img src="../img/loading.gif" alt="" class="loading">-->
+                        <img src="../img/registration_page/camera.png" alt="" class="camera">
+                        <p>封面照</p>
+                    </div>
+                </div>
+                <div>
+                    <div id="selectfiles2" class='photo photos' style="">
+                        <!--<img src="../img/loading.gif" alt="" class="loading">-->
+                        <img src="../img/registration_page/camera.png" alt="" class="camera">
+                        <p>半身照</p>
+                    </div>
+                </div>
+                <div>
+                    <div id="selectfiles3" class='photo photos' style="margin-right: 0.15rem;">
+                        <!--<img src="../img/loading.gif" alt="" class="loading">-->
+                        <img src="../img/registration_page/camera.png" alt="" class="camera">
+                        <p>全身照</p>
+
+                    </div>
+                </div>
+                <div>
+                    <div id="selectfiles4" class='photo photos' style="">
+                        <!--<img src="../img/loading.gif" alt="" class="loading">-->
+                        <img src="../img/registration_page/camera.png" alt="" class="camera">
+                        <p>侧面照</p>
+                    </div>
+                </div>
+
+                <p style="color: #999;font-size: 0.12rem;text-align: center;width: 100%;line-height: 0.35rem;margin-bottom: 0.2rem">建议上传1:1比例的照片,以达到最佳展示效果</p>
+                <p style="color: red;font-size: 0.12rem;text-align: center;width: 100%;line-height: 0.35rem;margin-bottom: 0.2rem">*必须填写以上全部内容及4张照片，才可进行报名</p>
+                <div id="ossfile"></div>
+                <div class="sign_upbtn submit" id="postfiles">
+                    <img src="../img/registration_page/sign_up.png" alt="">
+                </div>
+                <p class="term">
+                    <input type="checkbox" class="check">报名即代表同意本次<<span class="terms_activity">活动条款</span>>
+                </p>
+            </div>
+        </li>
+    </ul>
+</form>
+
+<form name=theform>
+    <input type="radio" name="myradio" value="random_name" checked=true style="display: none"/>
+</form>
+
+<div class="console" style="">
+
+</div>
+
+<script type="text/javascript" src="../js/plupload-2.1.2/js/moxie.js"></script>
+<script type="text/javascript" src="../js/plupload-2.1.2/js/plupload.min.js"></script>
+<script type="text/javascript" src="../js/upload.js"></script>
+<script src="../js/submit.js"></script>
+<script>
+
+</script>
+</body>
+</html>

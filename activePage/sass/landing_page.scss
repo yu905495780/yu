@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+*{
+  margin: 0;padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html,body{
+  width: 100%;
+  height: auto;
+}
+
+body{
+  position: relative;
+}
+
+a{
+  color: #aaa;
+  text-decoration: none;
+}
+
+img{
+  vertical-align: middle;
+  border: none;
+}
+
+.landing_img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.mid_box{
+  width: 100%;
+  height: 1.57rem;
+  background: url("../img/landing_page/landing_bg.png") repeat;
+  .mid{
+    width: 2.79rem;
+    height: auto;
+    margin: 0 auto;
+    .mid_img{
+      width: 2.79rem;
+      height: auto;
+    }
+  }
+}
+
+.alert_wrapper{
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+  //z-index: 200;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  .alert_box{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3.9rem;
+    height: 4.08rem;
+    z-index: 25;
+    border-radius: 0.1rem;
+    font-size: 0.28rem;
+    text-align: center;
+    overflow: hidden;
+    .icon{
+      width: auto;
+      height: 1.58rem;
+      margin: 0.32rem 0 0.22rem;
+    }
+    .title{
+      font-size: 0.26rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      margin-bottom: 0.26rem;
+      color: #BABABA;
+    }
+    .txt{
+      padding: 0 0.5rem;
+      font-size: 0.18rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      margin-bottom: 0.15rem;
+    }
+    .perfect,.close{
+      height: 0.67rem;
+      line-height: 0.67rem;
+      color: #fff;
+      font-size: 0.28rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      background-color: #F66E78;
+    }
+  }
+
+}

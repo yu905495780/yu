@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>青春之约北京站</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/public_documents/app.css">
+    <link rel="stylesheet" href="../css/landing_page.css">
+    <script src="../js/public_documents/app.js"></script>
+    <script src="../js/public_documents/jquery.min.js"></script>
+    <script src="../js/public_documents/index.js"></script>
+</head>
+<body>
+    <img src="../img/landing_page/landing_up.png" alt="" class="landing_img">
+    <div class="mid_box">
+        <div class="mid">
+            <img src="../img/landing_page/landing_btnn.png" alt="" class="mid_img">
+        </div>
+    </div>
+    <img src="../img/landing_page/landing_down.png" alt="" class="landing_img">
+
+<script>
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return decodeURIComponent(r[2]); return null;
+    }
+    uid = GetQueryString("uid");
+
+    $(function () {
+        $.get(apiUrl+'/activity/one/getMemberStatus?uid='+uid,function (data) {
+            var data = data.datas.memberStatus;
+            console.log(data);
+            if(data == 1){
+                $(".mid img").attr("src","../img/landing_page/landing_btn1.png");
+            }else if(data == -1){
+                $(".mid img").attr("src","../img/landing_page/resubmit_btn.png");
+                window.location.href = "signUp.html";
+            }else{
+                $(".mid img").click(function () {
+                    if(data == -2){
+                        var html = '<div class="alert_wrapper"><div class="alert_top" style="position: absolute;left: 0;top: 0;width: 100%;height: 19rem;"></div><div class="alert_box"><img src="../img/landing_page/landing_icon.png" alt="" class="icon"><p class="title">欢迎参与本次活动</p><p class="txt">您的个人中心身份还未认证，请稍后再试</p><p class="perfect">去完善></p></div><div class="alert_bottom" style="position: absolute;left: 0;bottom: 0;width: 100%;height: 7.7rem;"></div></div>';
+                        $("body").append(html);
+                    }else if(data == -3){
+                        var html = '<div class="alert_wrapper"><div class="alert_top" style="position: absolute;left: 0;top: 0;width: 100%;height: 19rem;"></div><div class="alert_box"><img src="../img/landing_page/landing_icon.png" alt="" class="icon"><p class="title">欢迎参与本次活动</p><p class="txt">您的个人中心视频还未认证</p><p class="perfect">去完善></p></div><div class="alert_bottom" style="position: absolute;left: 0;bottom: 0;width: 100%;height: 7.7rem;"></div></div>';
+                        $("body").append(html);
+                    }else if(data == 0){
+                        window.location.href = "signUp.html";
+                    }else{
+                        var html = '<div class="alert_wrapper"><div class="alert_top" style="position: absolute;left: 0;top: 0;width: 100%;height: 19rem;"></div><div class="alert_box"><img src="../img/landing_page/landing_icon.png" alt="" class="icon"><p class="title">欢迎参与本次活动</p><p class="txt">您的状态异常，请稍后再试</p><p class="close">确定</p></div></div>';
+                        $("body").append(html);
+                    }
+                    $(".close,.alert_top,.alert_bottom").click(function () {
+                        $(this).parents(".alert_wrapper").remove();
+                    })
+//                    去完善个人认证
+                    $(".perfect").click(function () {
+
+                    })
+                })
+            }
+        })
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+*{
+  margin: 0;padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html,body{
+  width: 100%;
+  height: auto;
+}
+
+body{
+  font-size: 0.2rem;
+}
+
+a{
+  color: #aaa;
+  text-decoration: none;
+}
+
+img{
+  vertical-align: middle;
+}
+.elasticstack {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 340px;
+  height: 380px;
+  list-style: none;
+  -webkit-perspective: 1000px;
+  -webkit-perspective-origin: 50% 150%;
+  perspective: 1000px;
+  perspective-origin: 50% 150%;
+}
+
+.elasticstack li {
+  position: absolute;
+  z-index: 1;
+  width: 340px;
+  height: 380px;
+  border-width: 60px 20px;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 10px 7px -7px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.1);
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transform: translate3d(0,0,-180px);
+  transform: translate3d(0,0,-180px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.elasticstack li img {
+  display: block;
+}
+
+.elasticstack li h5 {
+  margin: 0 5px;
+  color: #143f51;
+  height: 60px;
+  text-align: right;
+  font-size: 1.4em;
+  font-family: "Sacramento", cursive;
+  line-height: 60px;
+}
+
+.elasticstack li.animate {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.elasticstack li.move-back {
+  /* http://matthewlein.com/ceaser/ */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1.515);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1.515);
+}
+.personal_data{
+  padding: 0.4rem 0.4rem 0.31rem;
+  border-bottom: 0.18rem solid #F4F4F4;
+  .list_one{
+    padding: 0 0.1rem 0;
+    display: flex;
+    justify-content: space-between;
+    .dataname_box{
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      font-size: 0.26rem;
+      font-weight: 600;
+      vertical-align: middle;
+      line-height: 0.66rem;
+      .gender{
+        height: 0.26rem;
+        width: auto;
+        margin-left: 0.16rem;
+        img{
+          width: auto;
+          height: 0.26rem;
+        }
+      }
+    }
+    .follow_box{
+      width: auto;
+      height: 0.66rem;
+      img{
+        width: auto;
+        height: 0.66rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  .list_two{
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    padding: 0 0.1rem 0;
+    display: flex;
+    justify-content: space-between;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    .data_l,.data_r{
+      width: 50%;
+      color: #9F9F9F;
+      .information{
+        color: #585858;
+      }
+    }
+  }
+  .list_three{
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    padding: 0 0.1rem 0;
+    height: auto;
+    line-height: 0.45rem;
+    color: #9F9F9F;
+    .information{
+      color: #585858;
+    }
+  }
+  .list_four{
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    display: flex;
+    padding: 0 0.1rem 0;
+    height: auto;
+    line-height: 0.45rem;
+    color: #9F9F9F;
+    .information{
+      width: 75%;
+      color: #585858;
+      img{
+        width:100%;
+        margin-top: 0.1rem;
+      }
+    }
+  }
+}
+
+.leavingmessage_wrapper{
+  padding: 0 0.5rem;
+  .title{
+    font-size: 0.26rem;
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    color: #202020;
+    line-height: 0.92rem;
+    height: 0.92rem;
+  }
+  .line{
+    width: 100%;
+  }
+  .leavingmessage_box{
+
+    .message_list{
+      border-bottom: 1px solid #F0F0F0;
+      margin-bottom: 0.1rem;
+      .informations{
+        padding: 0.23rem 0;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.2rem;
+        .infor_l{
+          display: flex;
+          justify-content: space-between;
+          img{
+            width: 0.68rem;
+            height: 0.68rem;
+            border-radius: 50%;
+            margin-right: 0.15rem;
+          }
+          .small_box{
+            .other_name{
+              line-height: 0.38rem;
+              font-size: 0.22rem;
+              font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+              color: #404040;
+            }
+            .timer{
+              line-height: 0.3rem;
+              font-size: 0.16rem;
+              font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+              color: #A5A5A5;
+            }
+          }
+        }
+        .infor_r{
+          color: #3C3C3C;
+          font-size: 0.22rem;
+          font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+        }
+      }
+      .txt{
+        color: #656565;
+        font-size: 0.18rem;
+        font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}
+
+.footer{
+  width: 100%;
+  height: 0.85rem;
+  .share_btn{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  .foot{
+    width: 100%;
+    height: 0.85rem;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    .foot_left,.foot_mid{
+      display: flex;
+      line-height: 0.85rem;
+      color: #F6525F;
+      img{
+        margin-top: 0.28rem;
+        width: 0.3rem;
+        height: 0.3rem;
+        vertical-align: middle;
+        margin-right: 0.15rem;
+      }
+    }
+    .foot_right{
+      width: 1.71rem;
+      height: 0.6rem;
+      img{
+        margin-top: 0.1rem;
+        width: 1.71rem;
+        height: auto;
+      }
+    }
+  }
+}

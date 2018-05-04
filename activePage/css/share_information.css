@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+html, body {
+  width: 100%;
+  height: auto; }
+
+a {
+  color: #aaa;
+  text-decoration: none; }
+
+img {
+  vertical-align: middle; }
+
+body {
+  font-size: 0.3rem;
+  font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+  background: url("../img/audition_list/bg_banner.png") no-repeat, url("../img/audition_list/bg.png") repeat-y;
+  background-size: 100%; }
+
+.personal_data {
+  padding: 0 0.4rem 0.31rem; }
+  .personal_data .list_one {
+    padding: 0 0.1rem 0;
+    display: flex;
+    justify-content: space-between; }
+    .personal_data .list_one .dataname_box {
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      font-size: 0.26rem;
+      font-weight: 600;
+      vertical-align: middle;
+      line-height: 0.66rem;
+      color: #fff; }
+      .personal_data .list_one .dataname_box .gender {
+        height: 0.26rem;
+        width: auto;
+        margin-left: 0.16rem; }
+        .personal_data .list_one .dataname_box .gender img {
+          width: auto;
+          height: 0.26rem; }
+  .personal_data .list_two {
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    padding: 0 0.1rem 0;
+    display: flex;
+    justify-content: space-between;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    font-size: 0.2rem;
+    color: #fff; }
+    .personal_data .list_two .data_l, .personal_data .list_two .data_r {
+      width: 50%; }
+  .personal_data .list_three {
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    padding: 0 0.1rem 0;
+    height: auto;
+    line-height: 0.45rem;
+    font-size: 0.2rem;
+    color: #fff; }
+  .personal_data .list_four {
+    font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+    display: flex;
+    padding: 0 0.1rem 0;
+    height: auto;
+    line-height: 0.45rem;
+    font-size: 0.2rem;
+    color: #fff; }
+    .personal_data .list_four .information {
+      width: 80%; }
+  .personal_data .list_five {
+    width: 2.29rem;
+    height: auto;
+    margin: 0.48rem auto; }
+    .personal_data .list_five img {
+      width: 2.29rem;
+      height: auto; }
+
+/*# sourceMappingURL=share_information.css.map */

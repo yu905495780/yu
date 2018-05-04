@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+*{
+  margin: 0;padding: 0;
+  list-style: none;
+}
+
+html,body{
+  width: 100%;
+  height: auto;
+}
+
+a{
+  color: #aaa;
+  text-decoration: none;
+}
+
+img{
+  vertical-align: middle;
+}
+
+body{
+  font-size: 0.2rem;
+  font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+  background: url("../img/audition_list/bg_banner.png") no-repeat,url("../img/audition_list/bg.png") repeat-y;
+  background-size: 100%;
+}
+.search_wrapper{
+  padding: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  .search_box{
+    width: 4.17rem;
+    height: 0.7rem;
+    background: #fff;
+    border-radius: 5rem;
+    line-height: 0.7rem;
+    padding: 0 0.35rem;
+    input{
+      width: 3.78rem;
+      font-size: 0.2rem;
+      border: none;
+      outline: none;
+    }
+    .search_icon{
+      width: 0.23rem;
+      height: auto;
+    }
+  }
+  .share_box{
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #fff;
+    text-align: center;
+    line-height: 0.65rem;
+    img{
+      width: 0.31rem;
+      height: auto;
+    }
+  }
+}
+
+.ul_box{
+  padding: 0 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .list{
+    padding: 0.08rem;
+    width: 2.64rem;
+    height: 3.61rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    margin-bottom: 0.24rem;
+    position: relative;
+    .avatar{
+      width: 2.64rem;
+      height: 2.64rem;
+      border-radius: 0.1rem;
+    }
+    .name_age{
+      height: 0.55rem;
+      line-height: 0.55rem;
+      font-size: 0.2rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      .name{
+        margin-right: 0.15rem;
+      }
+      .gerden{
+        height: 0.2rem;
+        width: auto;
+        img{
+          height: 0.2rem;
+          width: auto;
+          vertical-align: middle;
+        }
+      }
+      .age{
+        font-size: 0.2rem;
+        vertical-align: middle;
+      }
+    }
+    .ticket{
+      font-size: 0.14rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      color: #828282;
+      display: flex;
+      justify-content: space-between;
+      .vote_numBox{
+        line-height: 0.43rem;
+        vertical-align: middle;
+      }
+    }
+    .vote_btn{
+      width: auto;
+      height: 0.43rem;
+      position: absolute;
+      right: 0.05rem;
+      bottom: 0.05rem;
+      //z-index: 50;
+      img{
+        width: auto;
+        height: 0.43rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.alert_wrapper{
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+  //z-index: 200;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  .alert_box{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3.7rem;
+    height: 4.08rem;
+    z-index: 25;
+    border-radius: 0.1rem;
+    font-size: 0.28rem;
+    text-align: center;
+    overflow: hidden;
+    .icon{
+      width: auto;
+      height: 1.58rem;
+      margin: 0.32rem 0 0.22rem;
+    }
+    .title{
+      font-size: 0.26rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      margin-bottom: 0.26rem;
+      color: #BABABA;
+    }
+    .txt{
+      padding: 0 0.5rem;
+      font-size: 0.2rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      margin-bottom: 0.15rem;
+    }
+    .perfect,.close{
+      width: 100%;
+      height: 0.67rem;
+      line-height: 0.67rem;
+      color: #fff;
+      font-size: 0.28rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      background-color: #F66E78;
+      position: absolute;
+      bottom: 0;
+      img{
+        width: auto;
+        height: 0.29rem;
+        margin-right: 0.15rem;
+      }
+    }
+  }
+
+}

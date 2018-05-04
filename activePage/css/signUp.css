@@ -1,0 +1,260 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+html, body {
+  width: 100%;
+  height: auto; }
+
+a {
+  color: #aaa;
+  text-decoration: none; }
+
+img {
+  vertical-align: middle; }
+
+body {
+  font-size: 0.3rem;
+  font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+  position: relative; }
+
+#ossfile .box {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.1rem; }
+
+.ul_box {
+  width: 5.24rem;
+  padding: 0.7rem 0.58rem 0.3rem;
+  background: url("../img/registration_page/bg.png") repeat-y;
+  background-size: 100%; }
+  .ul_box .list {
+    width: 4.19rem;
+    height: auto;
+    padding: 0.72rem 0.52rem 0.3rem;
+    background: url("../img/registration_page/bg_small.png") no-repeat;
+    background-size: 5.23rem 100%;
+    margin-bottom: 0.2rem;
+    position: relative; }
+    .ul_box .list .tomatoes_sticks {
+      position: absolute;
+      top: -0.5rem;
+      right: 0;
+      width: 0.89rem;
+      height: auto; }
+    .ul_box .list .Opera_flag {
+      position: absolute;
+      top: 3.9rem;
+      left: -0.6rem;
+      width: 1.15rem;
+      height: auto;
+      z-index: 2000; }
+    .ul_box .list .Doorknob {
+      position: absolute;
+      top: -0.37rem;
+      right: -0.17rem;
+      width: 0.8rem;
+      height: auto;
+      z-index: 2000; }
+    .ul_box .list .tricycle {
+      position: absolute;
+      top: -0.5rem;
+      left: -0.3rem;
+      width: 1.49rem;
+      height: auto;
+      z-index: 2000; }
+    .ul_box .list .title_box {
+      width: 2.72rem;
+      height: auto;
+      margin: 0 auto 0.48rem; }
+      .ul_box .list .title_box img {
+        width: 2.72rem;
+        height: auto; }
+    .ul_box .list .title_box1 {
+      width: 3.11rem;
+      height: auto;
+      margin: 0 auto 0.47rem; }
+      .ul_box .list .title_box1 img {
+        width: 3.11rem;
+        height: auto; }
+    .ul_box .list input[type='text'] {
+      width: 3.7rem;
+      height: 0.74rem;
+      background: white;
+      border-radius: 0.1rem;
+      border: 1px solid #fff;
+      padding: 0 0.25rem;
+      margin-bottom: 0.33rem;
+      font-size: 0.25rem;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      outline: none; }
+    .ul_box .list textarea {
+      width: 3.7rem;
+      height: 1.82rem;
+      background: white;
+      border-radius: 0.1rem;
+      border: 1px solid #fff;
+      padding: 0.25rem 0.25rem;
+      margin-bottom: 0.33rem;
+      font-size: 0.25rem;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      outline: none; }
+    .ul_box .list .sex_box {
+      margin-bottom: 0.35rem; }
+      .ul_box .list .sex_box input[type="radio"] + label::before {
+        content: "\a0";
+        /*不换行空格*/
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.15rem;
+        height: 0.15rem;
+        margin-right: 0.13rem;
+        border-radius: 50%;
+        border: 2px solid #FD8053;
+        padding: 0.025rem; }
+      .ul_box .list .sex_box input[type="radio"]:checked + label::before {
+        background-color: #FD8053;
+        background-clip: content-box; }
+      .ul_box .list .sex_box input[type="radio"] {
+        position: absolute;
+        clip: rect(0, 0, 0, 0); }
+    .ul_box .list input::placeholder, .ul_box .list textarea::placeholder {
+      color: #999;
+      font-size: 0.22rem; }
+    .ul_box .list .birth {
+      border-radius: 0.1rem;
+      position: relative; }
+      .ul_box .list .birth input[type='text'] {
+        width: 3.7rem;
+        height: 0.74rem;
+        background: white;
+        border-radius: 0.1rem;
+        border: none;
+        padding: 0 0.25rem;
+        margin-bottom: 0.33rem;
+        font-size: 0.25rem;
+        font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+        outline: none; }
+      .ul_box .list .birth .birth_img {
+        width: 0.18rem;
+        position: absolute;
+        top: 0.3rem;
+        right: 0.25rem; }
+    .ul_box .list .ol_box {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      .ul_box .list .ol_box .photo {
+        display: inline-block;
+        padding: 0;
+        width: 1.97rem;
+        height: 2.24rem;
+        border-radius: 0.1rem;
+        background: white;
+        margin-bottom: 0.32rem;
+        text-align: center;
+        font-size: 0.22rem;
+        color: #E3B2A7; }
+        .ul_box .list .ol_box .photo .camera {
+          margin-top: 0.62rem;
+          margin-bottom: 0.25rem;
+          width: 0.66rem;
+          height: 0.54rem; }
+        .ul_box .list .ol_box .photo .loading {
+          width: 1.97rem;
+          height: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto; }
+    .ul_box .list .sign_upbtn {
+      width: 3.69rem;
+      height: auto;
+      margin: 0 auto 0.37rem; }
+      .ul_box .list .sign_upbtn img {
+        width: 3.69rem;
+        height: auto; }
+    .ul_box .list .term {
+      margin: 0 auto 0.3rem;
+      vertical-align: middle;
+      color: #8B8A86;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      font-size: 0.2rem; }
+      .ul_box .list .term .terms_activity {
+        font-size: 0.2rem;
+        color: #8B8A86;
+        text-decoration: underline;
+        font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif; }
+      .ul_box .list .term .check {
+        width: 0.26rem;
+        height: 0.26rem;
+        border: none;
+        vertical-align: middle;
+        margin-right: 0.15rem; }
+    .ul_box .list .haw {
+      display: flex;
+      justify-content: space-between; }
+      .ul_box .list .haw .height, .ul_box .list .haw .weight {
+        width: 1.5rem;
+        height: 0.74rem; }
+
+.alert_wrapper {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+  .alert_wrapper .alert_box {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3.9rem;
+    height: 4.08rem;
+    z-index: 25;
+    border-radius: 0.1rem;
+    font-size: 0.28rem;
+    text-align: center;
+    overflow: hidden; }
+    .alert_wrapper .alert_box .icon {
+      width: auto;
+      height: 1.58rem;
+      margin: 0.39rem 0 0.31rem; }
+    .alert_wrapper .alert_box .title {
+      font-size: 0.26rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      margin-bottom: 0.26rem;
+      color: #BABABA; }
+    .alert_wrapper .alert_box .txt {
+      padding: 0 0.5rem;
+      font-size: 0.18rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      margin-bottom: 0.25rem; }
+    .alert_wrapper .alert_box .perfect, .alert_wrapper .alert_box .close {
+      width: 100%;
+      height: 0.67rem;
+      line-height: 0.67rem;
+      color: #fff;
+      font-size: 0.28rem;
+      font-family: "PingFang-SC-Regular", Arial, Helvetica, sans-serif;
+      background-color: #F66E78; }
+
+.bg_top img, .bg_bottom img {
+  width: 100%;
+  height: auto; }
+
+/*# sourceMappingURL=signUp.css.map */

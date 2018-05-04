@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>海选投票</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/public_documents/app.css">
+    <link rel="stylesheet" href="../css/audition_list.css">
+    <script src="../js/public_documents/app.js"></script>
+    <script src="../js/public_documents/index.js"></script>
+    <script src="../js/public_documents/jquery.min.js"></script>
+</head>
+<body>
+<div class="list_wrapper">
+    <div class="search_wrapper">
+        <div class="search_box">
+            <input type="text" class="search" placeholder="搜索用户姓名或神约ID">
+            <img src="../img/audition_list/search_icon.png" alt="" class="search_icon">
+        </div>
+        <div class="share_box">
+            <img src="../img/audition_list/share_icon.png" alt="">
+        </div>
+
+    </div>
+
+    <ul class="ul_box">
+
+    </ul>
+</div>
+
+<div class="details_wrapper">
+
+
+</div>
+
+
+<script>
+
+    var uid = GetQueryString("uid");
+
+    //    计算年龄
+    function computeAge(startDate) {
+        // 获得今天的时间
+        var date = new Date();
+        startDate = new Date(startDate);
+        var newDate = date.getTime() - startDate.getTime();
+        // 向下取整  例如 10岁 20天 会计算成 10岁
+        // 如果要向上取整 计算成11岁，把floor替换成 ceil
+        return Math.floor(newDate / 1000 / 60 / 60 / 24 / 365);
+    }
+
+    //    判断选手的性别
+    function usergerden(gerden, gerdenhtml, birthday) {
+        var gerdenhtml = '';
+        if (gerden == 1) {
+            gerdenhtml = '<span class="gerden"><img src="../img/audition_list/boy_icon.png" alt=""></span><span class="age" style="color: #7B9DFD;">' + computeAge(birthday) + '</span>'
+        } else if (gerden == 0) {
+            gerdenhtml = '<span class="gerden"><img src="../img/audition_list/girl_icon.png" alt=""></span><span class="age" style="color: #FF767D;">' + computeAge(birthday) + '</span>'
+        }
+        return gerdenhtml;
+    }
+
+//    投票
+    function vote() {
+        $(".vote_btn>img").click(function () {
+            var _this = $(this);
+            $.post(apiUrl + "/activity/one/addPraise?uid=" + uid + "&toUid=" + $(this).parents(".list").attr('id'), function (data) {
+                console.log(data);
+                if (data.code == -901) {
+                    var html = '<div class="alert_wrapper"><div class="alert_top" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;"></div><div class="alert_box"><img src="../img/audition_list/icon.png" alt="" class="icon"><p class="title">投票次数已用完</p><p class="txt">分享后即可获得10次投票机会</p><p class="perfect"><img src="../img/audition_list/share1_icon.png" alt="">去分享</p></div></div>';
+                    $("body").append(html);
+
+                    $(".alert_top").click(function () {
+                        $(".alert_wrapper").remove();
+                    })
+                }else{
+                    var sum = parseInt(_this.parent().prev().find(".vote_num").html());
+                    sum++;
+                    _this.parent().prev().find(".vote_num").html(sum);
+                }
+            })
+        })
+    }
+
+
+
+    $.get(apiUrl + "/activity/one/getPraiseList?type=1&page=1&limit=20", function (data) {
+        var data = data.datas.praiseList;
+//        console.log(data);
+
+        for (var i in data) {
+            var html = $('<li class="list" id="' + data[i].uid + '"><a href="./audition.html?toUid=' + data[i].uid + '"> <img src="' + avatarUrl + data[i].photo1 + '" alt="" class="avatar"> <p class="name_age"><span class="name">' + data[i].name + '</span>' + usergerden(data[i].gender, $(".name_age").innerHTML, data[i].birthday) + '</p> <div class="ticket"><p class="vote_numBox"><span>票数：<span class="vote_num">' + data[i].sumPraise + '</span></span></p></div> </a><p class="vote_btn"><img src="../img/audition_list/vote_icon.png" alt=""></p></li>');
+            $(".ul_box").append(html);
+        }
+        vote();
+    });
+
+    //    搜索功能
+    $(".search_icon").click(function () {
+        if($(".search").val() == ""){
+            $(".list").css("display","block");
+        }else{
+            $.get(apiUrl + "/activity/one/getMember?syidOrName=" + $(".search").val(), function (data) {
+                var data = data.datas.memberList;
+                console.log(data);
+                $(".list").css("display","none");
+                for(var i in data){
+                    var html = $('<li class="list" id="' + data[i].uid + '"><a href="./audition.html?toUid=' + data[i].uid + '"> <img src="' + avatarUrl + data[i].photo1 + '" alt="" class="avatar"> <p class="name_age"><span class="name">' + data[i].name + '</span>' + usergerden(data[i].gender, $(".name_age").innerHTML, data[i].birthday) + '</p> <div class="ticket"><p class="vote_numBox"><span>票数：<span class="vote_num">' + data[i].sumPraise + '</span></span></p></div> </a><p class="vote_btn"><img src="../img/audition_list/vote_icon.png" alt=""></p></li>');
+                    $(".ul_box").append(html);
+                }
+                vote();
+                if(data.length == 0){
+                    $(".list").css("display","block");
+                    var html = '<div class="alert_wrapper"><div class="alert_top" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;"></div><div class="alert_box"><img src="../img/audition_list/icon.png" alt="" class="icon"><p class="title">搜索无结果</p><p class="txt">请重新输入后查找</p><p class="close">确定</p></div></div>';
+                    $("body").append(html);
+
+                    $(".close").click(function () {
+                        $(".alert_wrapper").remove();
+                    })
+                }
+            });
+        }
+    });
+
+
+</script>
+</body>
+</html>

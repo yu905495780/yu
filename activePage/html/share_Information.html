@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>青春之约-北京站</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/public_documents/app.css">
+    <link rel="stylesheet" href="../css/share_information.css">
+    <script src="../js/public_documents/app.js"></script>
+    <script src="../js/public_documents/index.js"></script>
+    <script src="../js/public_documents/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/banner/component.css" />
+    <script src="../js/banner/modernizr.custom.js"></script>
+    <script src="../js/banner/draggabilly.pkgd.min.js"></script>
+    <script src="../js/banner/elastiStack.js"></script>
+</head>
+<body>
+<div class="stack">
+    <ul id="elasticstack" class="stack__images">
+        <li><img src="http://www.jq22.com/demo/playfulTrampolin201712050011/img/1.jpg" alt="01"/></li>
+        <li><img src="http://www.jq22.com/demo/playfulTrampolin201712050011/img/2.png" alt="02"/></li>
+        <li><img src="http://www.jq22.com/demo/playfulTrampolin201712050011/img/3.jpg" alt="03"/></li>
+        <li><img src="http://www.jq22.com/demo/playfulTrampolin201712050011/img/4.jpg" alt="04"/></li>
+        <li><img src="http://www.jq22.com/demo/playfulTrampolin201712050011/img/5.png" alt="05"/></li>
+        <li><img src="http://www.jq22.com/demo/playfulTrampolin201712050011/img/6.png" alt="06"/></li>
+    </ul>
+</div>
+
+<ul class="personal_data">
+    <li class="list_one">
+        <p class="dataname_box">
+            <span class="data_name">青春之约参赛选手姓名</span>
+            <span class="gender">
+                <img src="../img/audition/boy_icon.png" alt="">
+            </span>
+        </p>
+    </li>
+    <li class="list_two">
+        <p class="data_l">
+            身高：<span class="information"><span>169</span>cm</span>
+        </p>
+        <p class="data_r">
+            体重：<span class="information"><span>45</span>kg</span>
+        </p>
+    </li>
+    <li class="list_two">
+        <p class="data_l">
+            民族：<span class="information">汉族</span>
+        </p>
+        <p class="data_r">
+            星座：<span class="information">白羊座</span>
+        </p>
+    </li>
+    <li class="list_three">
+        出生日期：<span class="information">1990-04-18</span>
+    </li>
+    <li class="list_three">
+        毕业/就读院校：<span class="information">无</span>
+    </li>
+    <li class="list_three">
+        所属公司：<span class="information">无</span>
+    </li>
+    <li class="list_four">
+        <p>个人才艺：</p>
+        <p class="information">个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 个人才艺 </p>
+    </li>
+    <li class="list_five">
+        <img src="../img/audition/vote1_icon.png" alt="">
+    </li>
+</ul>
+
+
+
+
+<script>
+    (function() {
+        var body = document.body,
+                titles = [].slice.call( document.querySelectorAll( '#stack-titles > li' ) ),
+                totalTitles = titles.length,
+                stack = new ElastiStack( document.getElementById( 'elasticstack' ), {
+                    onUpdateStack : function( idx ) {
+                        classie.remove( titles[idx === 0 ? totalTitles - 1 : idx - 1], 'current' );
+                        classie.add( titles[idx], 'current' );
+                    }
+                })
+    })();
+</script>
+</body>
+</html>
